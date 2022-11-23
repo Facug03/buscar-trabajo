@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         lexendBold: ['Lexend-Bold'],
       },
+      colors: {
+        primary: '#2A9DFF',
+        'gray-t': '#42484E',
+      },
     },
   },
   plugins: [],

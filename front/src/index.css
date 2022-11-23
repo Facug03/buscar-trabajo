@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'Lexend';
-    src: local('RobotoMonoSemi'), url(/public/fonts/Lexend-Regular.ttf) format('truetype');
+    src: local('RobotoMonoSemi'), url(/fonts/Lexend-Regular.ttf) format('truetype');
 }
   
 @font-face {
     font-family: 'Lexend-Bold';
-    src: local('FireRed'), url(/public/fonts/Lexend-Bold.ttf) format('truetype');
+    src: local('FireRed'), url(/fonts/Lexend-Bold.ttf) format('truetype');
 }
 
 @layer base {
