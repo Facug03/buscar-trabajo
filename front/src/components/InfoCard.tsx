@@ -64,7 +64,10 @@ export default function InfoCard({
               <div>
                 <button
                   className='mr-3 bg-primary py-1 px-4 text-white rounded-md'
-                  onClick={() => onEdit(edit)}
+                  onClick={() => {
+                    onEdit(edit)
+                    onClose()
+                  }}
                 >
                   Editar
                 </button>

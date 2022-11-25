@@ -8,6 +8,7 @@ const expressApp = express()
 
 expressApp.use(express.json())
 expressApp.use(cors({ origin: true, credentials: true }))
+
 expressApp.use('/page', pageRouter)
 
 expressApp.listen(PORT, () => {

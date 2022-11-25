@@ -8,9 +8,13 @@ const pageRouter = express.Router()
 pageRouter.get('/', (req, res) => {
   const { url } = req.query
 
-  axios(url)
-    .then((resp) => res.json(resp.data))
-    .catch((err) => console.log(err))
+  if (url) {
+    axios(url)
+      .then((resp) => res.json(resp.data))
+      .catch((err) => res.sendStatus(404))
+  } else {
+    res.sendStatus(400)
+  }
 })
 
 export default pageRouter

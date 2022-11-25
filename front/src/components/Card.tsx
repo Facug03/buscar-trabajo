@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
-import Delete from './Icons/Delete'
-import Edit from './Icons/Add'
+import { useState } from 'react'
 import InfoCard from './InfoCard'
 
 import type { Url } from '../types'
@@ -19,12 +17,15 @@ function Card({ id, name, link, deleteCompany, onEdit }: Props) {
 
   return (
     <>
-      <div onClick={() => setModal(true)} className='cursor-pointer'>
+      <div
+        onClick={() => setModal(true)}
+        className='cursor-pointer overflow-hidden overflow-ellipsis'
+      >
         {name}
       </div>
       <div
         onClick={() => setModal(true)}
-        className='text-xs text-primary col-span-4 cursor-pointer'
+        className='text-xs text-primary col-span-4 cursor-pointer overflow-hidden overflow-ellipsis'
       >
         {link}
       </div>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import uuid from 'react-uuid'
-import AddCard from './components/AddCard'
 
+import type { Url } from './types'
 import Card from './components/Card'
 import Add from './components/Icons/Add'
-import type { Url } from './types'
-// import axios from 'axios'
+import AddCardModal from './components/AddCardModal'
+import { getSites } from './api'
+import CheckWord from './components/CheckWord'
+import AddCard from './components/AddCard'
 
 const INITIAL_STATE = {
   name: '',
@@ -21,16 +23,22 @@ function App() {
     return JSON.parse(saveUrl)
   })
   const [modal, setModal] = useState(false)
+  const [check, setCheck] = useState<(string | undefined)[]>([])
+  const [word, setWord] = useState('')
 
   useEffect(() => {
     window.localStorage.setItem('urls', JSON.stringify(company))
   }, [company])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUrl({
-      ...url,
-      [e.target.name]: e.target.value,
-    })
+    if (e.target.name !== 'word') {
+      setUrl({
+        ...url,
+        [e.target.name]: e.target.value,
+      })
+    } else {
+      setWord(e.target.value)
+    }
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -46,11 +54,32 @@ function App() {
   }
 
   const onEdit = (url: Url) => {
-    console.log(url)
+    const comp = [...company]
+    const item = comp.find((com) => com.id === url.id)
+    if (item) {
+      item.name = url.name
+      item.link = url.link
+      setCompany(comp)
+    }
+  }
+
+  const handleCheck = async () => {
+    const res = await getSites(company).then((resp) => resp)
+    console.log(res)
+    const isWord = res.map((res, index) => {
+      if (
+        res.status === 'fulfilled' &&
+        res.value.data.toLowerCase().includes(word.toLocaleLowerCase())
+      ) {
+        console.log(res.value.data)
+        return `${company[index].link}`
+      }
+    })
+    setCheck(isWord)
   }
 
   return (
-    <div className='p-12'>
+    <div className='p-16'>
       <header>
         <h1 className='text-5xl mb-4 text-primary text-center'>
           Consegui Trabajo!
@@ -63,7 +92,7 @@ function App() {
       <main>
         <section>
           {company.length ? (
-            <article className='relative grid gap-3 p-4 grid-cols-5 items-center rounded-md border-black border-2 w-3/4 mx-auto'>
+            <article className='relative grid gap-3 p-4 grid-cols-5 items-center rounded-md border-black border-2 whitespace-nowrap'>
               <div>Nombre</div>
               <div className='col-span-4'>Link</div>
               <button
@@ -73,7 +102,7 @@ function App() {
                 Añadir
                 <Add />
               </button>
-              <AddCard
+              <AddCardModal
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
                 onClose={() => setModal(false)}
@@ -93,9 +122,21 @@ function App() {
               ))}
             </article>
           ) : (
-            <div>No hay url anadidas</div>
+            <AddCard
+              handleSubmit={handleSubmit}
+              handleChange={handleChange}
+              name={url.name}
+              link={url.link}
+            />
           )}
         </section>
+        <CheckWord
+          company={company}
+          word={word}
+          handleChange={handleChange}
+          handleCheck={handleCheck}
+          check={check}
+        />
       </main>
     </div>
   )
