@@ -4,7 +4,7 @@ import cors from 'cors'
 import pageRouter from './routes/page.js'
 
 const PORT = 3001
-const expressApp = express()
+export const expressApp = express()
 
 expressApp.use(express.json())
 expressApp.use(cors({ origin: true, credentials: true }))
