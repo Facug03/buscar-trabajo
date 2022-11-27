@@ -83,7 +83,7 @@ function App() {
   }
 
   return (
-    <div className='p-16'>
+    <div className='p-16 max-ph:p-10'>
       <header>
         <h1 className='text-5xl mb-4 text-primary text-center font-lexendBold'>
           Consegui Trabajo!
@@ -96,9 +96,9 @@ function App() {
       <main>
         <section>
           {company.length ? (
-            <article className='relative grid gap-3 p-4 grid-cols-5 items-center rounded-md border-black border-2 whitespace-nowrap'>
+            <article className='relative grid gap-3 p-4 grid-cols-5 max-ph:grid-cols-1 items-center rounded-md border-black border-2 whitespace-nowrap'>
               <div>Nombre</div>
-              <div className='col-span-4'>Link</div>
+              <div className='col-span-4 max-ph:hidden'>Link</div>
               <button
                 onClick={() => setModal(true)}
                 className='absolute right-[15px] top-[11px] flex items-center gap-1 bg-primary py-1 px-2 text-white rounded-md'

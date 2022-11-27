@@ -118,18 +118,20 @@ export default function CheckWord({
                   </p>
                 )}
               </div>
-              <button
-                onClick={handleAccept}
-                className='bg-primary py-1 px-4 text-white rounded-md mr-4'
-              >
-                Aceptar
-              </button>
-              <button
-                onClick={handleCancel}
-                className='bg-primary py-1 px-4 text-white rounded-md'
-              >
-                Cancelar
-              </button>
+              <div className='inline max-tb:block max-tb:mt-5'>
+                <button
+                  onClick={handleAccept}
+                  className='bg-primary py-1 px-4 text-white rounded-md mr-4'
+                >
+                  Aceptar
+                </button>
+                <button
+                  onClick={handleCancel}
+                  className='bg-primary py-1 px-4 text-white rounded-md'
+                >
+                  Cancelar
+                </button>
+              </div>
             </div>
           )}
         </div>
