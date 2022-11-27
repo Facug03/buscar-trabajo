@@ -25,6 +25,8 @@ function App() {
   const [modal, setModal] = useState(false)
   const [check, setCheck] = useState<(string | undefined)[]>([])
   const [word, setWord] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
     window.localStorage.setItem('urls', JSON.stringify(company))
@@ -64,24 +66,26 @@ function App() {
   }
 
   const handleCheck = async () => {
+    setLoading(true)
     const res = await getSites(company).then((resp) => resp)
-    console.log(res)
-    const isWord = res.map((res, index) => {
+    const isWord: string[] = []
+    res.forEach((res, index) => {
       if (
         res.status === 'fulfilled' &&
         res.value.data.toLowerCase().includes(word.toLocaleLowerCase())
       ) {
-        console.log(res.value.data)
-        return `${company[index].link}`
+        isWord.push(company[index].link)
       }
     })
-    setCheck(isWord)
+    isWord.length ? setCheck(isWord) : setNotFound(true)
+
+    setLoading(false)
   }
 
   return (
     <div className='p-16'>
       <header>
-        <h1 className='text-5xl mb-4 text-primary text-center'>
+        <h1 className='text-5xl mb-4 text-primary text-center font-lexendBold'>
           Consegui Trabajo!
         </h1>
         <p className='mb-8 text-gray-t text-center text-base'>
@@ -136,6 +140,11 @@ function App() {
           handleChange={handleChange}
           handleCheck={handleCheck}
           check={check}
+          loading={loading}
+          notFound={notFound}
+          changeFound={() => setNotFound(false)}
+          changeWord={(word) => setWord(word)}
+          changeCheck={() => setCheck([])}
         />
       </main>
     </div>
