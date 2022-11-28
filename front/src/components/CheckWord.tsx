@@ -95,7 +95,7 @@ export default function CheckWord({
                 </button>
               ) : (
                 <button
-                  className='bg-primary py-2 px-4 text-white rounded-md block'
+                  className='bg-primary py-2 px-4 text-white rounded-md block hover:bg-secondary duration-200 ease-linear'
                   onClick={handleCheck}
                 >
                   Check
@@ -121,13 +121,13 @@ export default function CheckWord({
               <div className='inline max-tb:block max-tb:mt-5'>
                 <button
                   onClick={handleAccept}
-                  className='bg-primary py-1 px-4 text-white rounded-md mr-4'
+                  className='bg-primary py-1 px-4 text-white rounded-md mr-4 hover:bg-secondary duration-200 ease-linear'
                 >
                   Aceptar
                 </button>
                 <button
                   onClick={handleCancel}
-                  className='bg-primary py-1 px-4 text-white rounded-md'
+                  className='bg-primary py-1 px-4 text-white rounded-md hover:bg-secondary duration-200 ease-linear'
                 >
                   Cancelar
                 </button>

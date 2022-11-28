@@ -25,7 +25,7 @@ function Card({ id, name, link, deleteCompany, onEdit }: Props) {
       </div>
       <div
         onClick={() => setModal(true)}
-        className='text-xs text-primary col-span-4 cursor-pointer overflow-hidden overflow-ellipsis max-ph:col-span-1'
+        className='text-xs text-primary col-span-4 cursor-pointer overflow-hidden overflow-ellipsis max-ph:col-span-1 min-[1800px]:text-sm'
       >
         {link}
       </div>

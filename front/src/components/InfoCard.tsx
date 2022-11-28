@@ -52,8 +52,16 @@ export default function InfoCard({
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              <div className='relative'>
                 <label className='block mb-3 text-lg'>Link</label>
+                <a
+                  className='absolute text-sm text-white rounded bg-primary px-1  hover:bg-secondary duration-300 ease-in-out top-[4.5px] left-[45px]'
+                  href={edit.link}
+                  target='_blank'
+                  rel='noreferrer noopener'
+                >
+                  Ir
+                </a>
                 <input
                   className='border-primary px-2 py-1 border-2 rounded-md outline-none w-full mb-2'
                   name='link'
@@ -63,7 +71,7 @@ export default function InfoCard({
               </div>
               <div>
                 <button
-                  className='mr-3 bg-primary py-1 px-4 text-white rounded-md'
+                  className='mr-3 bg-primary py-1 px-4 text-white rounded-md hover:bg-secondary duration-200 ease-in-out'
                   onClick={() => {
                     onEdit(edit)
                     onClose()
@@ -72,7 +80,7 @@ export default function InfoCard({
                   Editar
                 </button>
                 <button
-                  className='bg-primary py-1 px-4 text-white rounded-md'
+                  className='bg-primary py-1 px-4 text-white rounded-md hover:bg-secondary duration-200 ease-linear'
                   onClick={() => deleteCompany(id)}
                 >
                   Borrar

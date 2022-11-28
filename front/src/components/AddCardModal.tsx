@@ -46,7 +46,7 @@ export default function AddCardModal({
                   onChange={handleChange}
                 />
               </div>
-              <button className='bg-primary py-2 px-4 text-white rounded-md'>
+              <button className='bg-primary py-2 px-4 text-white rounded-md hover:bg-secondary duration-200 ease-linear'>
                 Añadir
               </button>
             </form>
