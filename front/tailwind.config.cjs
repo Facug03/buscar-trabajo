@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         primary: '#2A9DFF',
         'gray-t': '#42484E',
+        secondary: '#1ABEE8',
       },
       screens: {
         tb: '695px',
