@@ -37,7 +37,7 @@ export default function InfoCard({
   return (
     <>
       {modal && (
-        <div className='w-screen h-screen fixed top-0 left-0 bg-black/50 flex items-center justify-center'>
+        <div className='w-screen h-screen fixed top-0 left-0 bg-black/50 flex items-center justify-center z-50'>
           <div className='w-80 bg-white relative border-2 border-black p-5 rounded-md'>
             <button onClick={onClose} className='absolute top-0 right-[6px]'>
               X

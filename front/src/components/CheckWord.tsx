@@ -104,16 +104,16 @@ export default function CheckWord({
             </div>
           ) : (
             <div>
-              <div className='relative inline'>
+              <div className='relative inline max-[435px]:block'>
                 <label className='mr-2'>Palabra clave</label>
                 <input
-                  className='border-primary px-2 mr-2 border-2 rounded-md outline-none'
+                  className='border-primary px-2 mr-2 border-2 rounded-md outline-none max-[435px]:block'
                   name='word'
                   value={word}
                   onChange={handleChange}
                 />
-                {word.length ? null : (
-                  <p className='absolute top-[25px] left-[115px] text-xs text-red-500'>
+                {!word.length && (
+                  <p className='absolute top-[25px] left-[115px] text-xs text-red-500 max-[435px]:top-[52px] max-[435px]:left-[1px]'>
                     {error}
                   </p>
                 )}
