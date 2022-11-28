@@ -12,7 +12,7 @@ export default function AddCard({
   link,
 }: Props) {
   return (
-    <div className=' bg-white border-2 border-black p-5 rounded-md w-fit'>
+    <div className=' bg-white border-2 border-black p-5 rounded-md w-fit mx-auto'>
       <h2 className='text-2xl mb-2'>Añadir link de portal de trabajo</h2>
       <form className='flex gap-3 flex-col items-start' onSubmit={handleSubmit}>
         <div>
@@ -33,7 +33,7 @@ export default function AddCard({
             onChange={handleChange}
           />
         </div>
-        <button className='bg-primary py-2 px-4 text-white rounded-md'>
+        <button className='bg-primary py-2 px-4 text-white rounded-md hover:bg-secondary duration-200 ease-linear'>
           Añadir
         </button>
       </form>
