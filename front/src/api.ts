@@ -4,7 +4,7 @@ import type { Url } from './types'
 export const getSites = async (companies: Url[]) => {
   const sites = await Promise.allSettled(
     companies.map((comp) =>
-      axios(`http://localhost:3001/page?url=${comp.link}`)
+      axios(`${import.meta.env.VITE_PAGE}/page?url=${comp.link}`)
     )
   )
 
