@@ -55,7 +55,7 @@ export default function InfoCard({
               <div className='relative'>
                 <label className='block mb-3 text-lg'>Link</label>
                 <a
-                  className='absolute text-sm text-white rounded bg-primary px-1  hover:bg-secondary duration-300 ease-in-out top-[4.5px] left-[45px]'
+                  className='absolute text-sm text-white rounded bg-primary px-1  hover:bg-secondary duration-300 ease-in-out top-[5px] left-[45px]'
                   href={edit.link}
                   target='_blank'
                   rel='noreferrer noopener'

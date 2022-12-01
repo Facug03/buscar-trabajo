@@ -83,14 +83,13 @@ function App() {
   }
 
   return (
-    <div className='p-16 max-ph:p-10 max-[435px]:p-6 min-[1500px]:px-20 min-[1800px]:px-24'>
+    <div className='px-16 pt-6 max-ph:px-10 max-[435px]:px-6 min-[1500px]:px-20 min-[1800px]:px-24'>
       <header className='min-[1800px]:mb-14'>
         <h1 className='text-5xl mb-4 text-primary text-center font-lexendBold max-[435px]:text-4xl'>
           ¡Herramienta para buscar trabajo!
         </h1>
         <p className='mb-8 text-gray-t text-center text-base max-[435px]:text-sm'>
-          Busca si una empresa esta buscando tu Seniority o tecnologia
-          preferida!
+          Busca si una empresa esta buscando tu seniority o tecnología preferida
         </p>
       </header>
       <main>
