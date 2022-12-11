@@ -83,7 +83,7 @@ function App() {
   }
 
   return (
-    <div className='px-16 pt-6 max-ph:px-10 max-[435px]:px-6 min-[1500px]:px-20 min-[1800px]:px-24'>
+    <div className='px-16 pt-5 max-ph:px-10 max-[435px]:px-6 min-[1500px]:px-20 min-[1800px]:px-24'>
       <header className='min-[1800px]:mb-14'>
         <h1 className='text-5xl mb-4 text-primary text-center font-lexendBold max-[435px]:text-4xl'>
           ¡Herramienta para buscar trabajo!
@@ -133,18 +133,20 @@ function App() {
             />
           )}
         </section>
-        <CheckWord
-          company={company}
-          word={word}
-          handleChange={handleChange}
-          handleCheck={handleCheck}
-          check={check}
-          loading={loading}
-          notFound={notFound}
-          changeFound={() => setNotFound(false)}
-          changeWord={(word) => setWord(word)}
-          changeCheck={() => setCheck([])}
-        />
+        {company.length > 0 && (
+          <CheckWord
+            company={company}
+            word={word}
+            handleChange={handleChange}
+            handleCheck={handleCheck}
+            check={check}
+            loading={loading}
+            notFound={notFound}
+            changeFound={() => setNotFound(false)}
+            changeWord={(word) => setWord(word)}
+            changeCheck={() => setCheck([])}
+          />
+        )}
       </main>
     </div>
   )

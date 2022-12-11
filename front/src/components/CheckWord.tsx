@@ -52,7 +52,7 @@ export default function CheckWord({
   }
 
   return (
-    <section>
+    <section className='pb-4'>
       {company.length ? (
         <div className='mt-7'>
           <h2 className='mb-4'>
@@ -137,7 +137,7 @@ export default function CheckWord({
         </div>
       ) : null}
       {!!check.length && !!word.length && !edit && (
-        <div className='mt-7 mx-auto'>
+        <div className='mt-5 mx-auto'>
           <h2 className='mb-2'>
             Estas paginas contienen la palabra:{' '}
             <span className='px-3 py-1 bg-[#ededed] rounded'>{word}</span>
