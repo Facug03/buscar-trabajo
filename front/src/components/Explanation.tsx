@@ -73,7 +73,7 @@ export default function Explanation() {
             </div>
           </div>
           <h3 className='mb-2 text-base text-primary font-lexendBold'>
-            ▶ El tercer paso es darle al boton de check y aparecerán todos los
+            ▶ El tercer paso es darle al botón de check y aparecerán todos los
             resultados:
           </h3>
           <p className='mb-2 pl-2'>Ejemplo:</p>
