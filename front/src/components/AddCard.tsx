@@ -12,7 +12,7 @@ export default function AddCard({
   link,
 }: Props) {
   return (
-    <div className=' bg-white border-2 border-black p-5 rounded-md w-fit mx-auto'>
+    <div className=' bg-white border-2 border-black p-5 rounded-md w-fit mx-auto mb-2'>
       <h2 className='text-2xl mb-2'>Añadir link de portal de trabajo</h2>
       <form className='flex gap-3 flex-col items-start' onSubmit={handleSubmit}>
         <div>
