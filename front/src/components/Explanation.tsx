@@ -18,7 +18,7 @@ export default function Explanation() {
           <div className='mb-4'>
             <h3 className='mb-2 text-base text-primary font-lexendBold'>
               ▶ El primer paso es agregar un link a un portal de empleo de una
-              empresa. Podés agregar cuantos links quieras:
+              empresa:
             </h3>
             <p className='mb-2 pl-2'>Ejemplo:</p>
             <div className='bg-white px-2 py-3 rounded'>
