@@ -84,7 +84,9 @@ export default function Explanation() {
             </h2>
             <ul className='list-none'>
               <li className='text-primary'>
-                <span>https://www.eudaimonia.com.ar/jobs.html</span>
+                <span className='max-[340px]:text-sm max-[303px]:text-xs'>
+                  https://www.eudaimonia.com.ar/jobs.html
+                </span>
               </li>
             </ul>
           </div>
