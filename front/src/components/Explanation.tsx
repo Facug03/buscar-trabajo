@@ -9,7 +9,7 @@ export default function Explanation() {
         className='border-[3.5px] border-primary bg-primary rounded-lg p-1 cursor-pointer w-fit mb-3'
         onClick={() => setInfo(!info)}
       >
-        <h2 className='text-3xl font-lexendBold text-white'>
+        <h2 className='text-3xl font-lexendBold text-white max-[355px]:text-2xl'>
           + ¿Cómo funciona?
         </h2>
       </div>
