@@ -8,6 +8,7 @@ import AddCardModal from './components/AddCardModal'
 import { getSites } from './api'
 import CheckWord from './components/CheckWord'
 import AddCard from './components/AddCard'
+import Explanation from './components/Explanation'
 
 const INITIAL_STATE = {
   name: '',
@@ -93,6 +94,7 @@ function App() {
         </p>
       </header>
       <main>
+        <Explanation />
         <section className='min-[1800px]:mb-14'>
           {company.length ? (
             <article className='relative grid gap-3 p-4 grid-cols-5 max-ph:grid-cols-1 items-center rounded-md border-black border-2 whitespace-nowrap'>
